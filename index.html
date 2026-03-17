@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="th" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniLost</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <!-- Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <!-- SDK -->
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script src="tailwind-config.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="h-full font-prompt">
+  <div id="app-wrapper" class="h-full w-full overflow-auto gradient-bg pattern-dots">
+
+    <!-- Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 glass-card border-b border-white/20 px-4 py-3">
+      <div class="max-w-lg mx-auto flex items-center justify-between">
+        <button id="profile-btn" class="flex items-center gap-2 bg-white/80 px-3 py-1.5 rounded-full">
+          <i data-lucide="user"></i>
+          <span>นักศึกษา</span>
+        </button>
+
+        <h1 id="app-title" class="text-xl font-extrabold">UniLost</h1>
+
+        <button id="notif-btn" class="relative bg-white/80 p-2 rounded-full">
+          <i data-lucide="bell"></i>
+          <span class="notif-dot"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="max-w-lg mx-auto px-4 pb-24 pt-4">
+
+      <button id="add-main-btn" onclick="openModal()" class="w-full shimmer-btn py-4 rounded-2xl mb-6">
+        + แจ้งของหาย
+      </button>
+
+      <div id="items-list"></div>
+
+      <div id="empty-state" class="hidden text-center py-16">
+        <p>ยังไม่มีรายการ</p>
+      </div>
+
+      <div id="loading-state" class="text-center py-16">
+        <p>กำลังโหลด...</p>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+</body>
+</html>
